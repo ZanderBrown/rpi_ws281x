@@ -85,22 +85,23 @@ reponsibility for damage, harm, or mistakes.
 
 ### Build:
 
-- Install Scons (on raspbian, `apt-get install scons`).
+- Install meson (`pip install --user`).
 - Make sure to adjust the parameters in main.c to suit your hardware.
   - Signal rate (400kHz to 800kHz).  Default 800kHz.
   - ledstring.invert=1 if using a inverting level shifter.
   - Width and height of LED matrix (height=1 for LED string).
-- Type `scons` from inside the source directory.
+- Type `meson [builddir]` from inside the source directory.
+- Type `ninja` from inside your `[builddir]`.
 
 ### Running:
 
-- Type `sudo ./test` (default uses PWM channel 0).
+- Type `sudo ./rpi-ws2811-test` (default uses PWM channel 0).
 - That's it.  You should see a moving rainbow scroll across the
   display.
-- More options are available, `./test -h` should show them:
+- More options are available, `./rpi-ws2811-test -h` should show them:
 ```
-./test version 1.1.0
-Usage: ./test
+./rpi-ws2811-test version 1.1.0
+Usage: ./rpi-ws2811-test
 -h (--help)    - this information
 -s (--strip)   - strip type - rgb, grb, gbr, rgbw
 -x (--width)   - matrix width (default 8)
