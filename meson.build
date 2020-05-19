@@ -1,5 +1,7 @@
 project('rpi-ws281x', 'c', version: '1.1.0')
 
+pkg = import('pkgconfig')
+
 sources = [
     'mailbox.c',
     'ws2811.c',
@@ -26,17 +28,19 @@ headers = [
     'ws2811.h',
 ]
 version_h = configure_file(output: 'version.h',
-                          configuration: conf)
+                           configuration: conf)
 
 headers += version_h
 
 sources += headers
 
-install_headers(headers)
+install_headers(headers, subdir: 'ws2811')
 rpi_ws2811_inc = include_directories('.')
 rpi_ws2811_lib = library('rpi-ws2811', sources)
 rpi_ws2811_dep = declare_dependency(link_with: [rpi_ws2811_lib],
                                     include_directories: [rpi_ws2811_inc])
+
+pkg.generate(rpi_ws2811_lib)
 
 test_sources = [
     'main.c'
