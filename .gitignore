@@ -6,3 +6,6 @@ newtest
 *.o
 *.a
 *.swp
+build
+.vscode
+.mypy_cache
