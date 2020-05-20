@@ -95,13 +95,13 @@ reponsibility for damage, harm, or mistakes.
 
 ### Running:
 
-- Type `sudo ./rpi-ws2811-test` (default uses PWM channel 0).
+- Type `sudo ./tests/rpi-ws2811-test` (default uses PWM channel 0).
 - That's it.  You should see a moving rainbow scroll across the
   display.
-- More options are available, `./rpi-ws2811-test -h` should show them:
+- More options are available, `./tests/rpi-ws2811-test -h` should show them:
 ```
-./rpi-ws2811-test version 1.1.0
-Usage: ./rpi-ws2811-test
+./tests/rpi-ws2811-test version 1.1.0
+Usage: ./tests/rpi-ws2811-test
 -h (--help)    - this information
 -s (--strip)   - strip type - rgb, grb, gbr, rgbw
 -x (--width)   - matrix width (default 8)
